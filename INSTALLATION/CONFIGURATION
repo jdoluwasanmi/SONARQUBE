@@ -13,8 +13,22 @@ ulimit -n 131072
 ulimit -u 8192
 vim /etc/security/limits.conf  
 # Add Below To The File
+elasticsearch - nofile 131072
+elasticsearch - nproc 65535
+elasticsearch   soft    nofile          65536
+elasticsearch   hard    nofile          65536
+elasticsearch   memlock unlimited
+root soft memlock unlimited
+root hard memlock unlimited
+root - nofile 131072
+root - nproc 8192
 sonarqube - nofile 131072
-sonarqube - nproc 8192
+sonarqube - nproc 65535
+
+vim /etc/sysctl.conf
+fs.file-max = 2097152
+vm.max_map_count = 524288
+vm.swappiness = 1
 
 Installation
 Step 1: Install OpenJDK
