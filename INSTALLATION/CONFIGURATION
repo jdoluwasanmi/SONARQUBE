@@ -21,7 +21,7 @@ Step 1: Install OpenJDK
 sudo yum install java-11-openjdk-devel
 sudo java -version
 
-Step 2: Install PostgreSQL
+Step 2: Install PostgreSQL (https://www.postgresql.org/download/linux/redhat/)
 sudo yum install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm -y
 sudo yum install postgresql10-server postgresql10-contrib -y
 sudo /usr/pgsql-10/bin/postgresql-10-setup initdb
