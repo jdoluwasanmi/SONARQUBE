@@ -47,6 +47,10 @@ sudo /usr/pgsql-10/bin/postgresql-10-setup initdb
 sudo systemctl enable postgresql-10
 sudo systemctl start postgresql-10
 
+then go to 
+
+sudo vi /var/lib/pgsql/10/data/pg_hba.conf
+
 Once Opened Find the below lines at the bottom of the file and change peer to trust and idnet to md5
 peer  change to trust
 idnet change to md5
