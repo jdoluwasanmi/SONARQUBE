@@ -83,6 +83,7 @@ Download stable SonarQube version from below website.
 Download & unzip SonarQube Latest Version
 cd /opt
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.1.0.31237.zip
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.0.65466.zip
 unzip sonarqube-8.1.0.31237.zip
 mv /opt/sonarqube-8.1.0.31237 /opt/sonarqube
 Create new user give ownership to /opt/sonarqube directory
