@@ -32,7 +32,7 @@ vm.swappiness = 1
 
 Installation
 Step 1: Install OpenJDK
-sudo yum install java-11-openjdk-devel
+sudo yum install java-11-openjdk-devel -y
 sudo java -version
 
 Step 2: Install PostgreSQL (https://www.postgresql.org/download/linux/redhat/)
@@ -40,24 +40,24 @@ Step 2: Install PostgreSQL (https://www.postgresql.org/download/linux/redhat/)
 sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 # Install PostgreSQL:
-sudo yum install -y postgresql10-server
+yum -y install postgresql13 postgresql13-server
 
 # Optionally initialize the database and enable automatic start:
-sudo /usr/pgsql-10/bin/postgresql-10-setup initdb
-sudo systemctl enable postgresql-10
-sudo systemctl start postgresql-10
+/usr/pgsql-13/bin/postgresql-13-setup initdb
+systemctl start postgresql-13
+systemctl enable postgresql-13
 
 then go to 
 
-sudo vi /var/lib/pgsql/10/data/pg_hba.conf
+sudo vi /var/lib/pgsql/13/data/pg_hba.conf
 
 Once Opened Find the below lines at the bottom of the file and change peer to trust and idnet to md5
 peer  change to trust
 idnet change to md5
 Start PostgreSQL Database server
-sudo systemctl start postgresql-10
+sudo systemctl start postgresql-13
 Enable it to start automatically at System Startup
-sudo systemctl enable postgresql-10
+sudo systemctl enable postgresql-13
 Change the password for the default PostgreSQL user.
 sudo passwd postgres
 Switch to the postgres user.
@@ -67,7 +67,7 @@ createuser sonar
 Switch to the PostgreSQL shell.
 psql
 Set a password for the newly created user for SonarQube database.
-ALTER USER sonar WITH ENCRYPTED password 'sonar';
+ALTER USER sonar WITH ENCRYPTED password 'Jesus$#@!';
 Create a new database for PostgreSQL database by running:
 CREATE DATABASE sonarqube OWNER sonar;
 Exit from the psql shell:
